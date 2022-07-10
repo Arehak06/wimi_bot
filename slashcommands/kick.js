@@ -1,3 +1,4 @@
+const { MessageEmbed } = require('discord.js')
 const run = async (client, interaction) => {
 	let user = interaction.options.getUser("user")
 	let reason = interaction.options.getString("reason") || "No reason given"
@@ -7,7 +8,7 @@ const run = async (client, interaction) => {
 	// ban
 	try {
 		await interaction.guild.members.kick(user, reason)
-		return interaction.reply(`${user.tag} has been kicked for *${reason}*`)
+		return interaction.reply({ embeds: [exampleEmbed] })
 	} catch (e) {
 		if (e) {
 			console.error(e)
@@ -31,3 +32,10 @@ module.exports = {
 	],
 	run,
 }
+
+
+// inside a command, event listener, etc.
+const exampleEmbed = new MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle(`Kick`)
+	.setDescription(`Игрок был кикнут`);
