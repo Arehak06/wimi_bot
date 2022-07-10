@@ -1,7 +1,7 @@
 const { MessageActionRow, MessageButton, MessageEmbed } = require("discord.js")
 
 module.exports = {
-    name: "ioi",
+    name: "vk",
     category: "test",
     devOnly: true,
     run: async ({client, message, args}) => {

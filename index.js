@@ -1,7 +1,5 @@
 const Discord = require("discord.js")
 
-const TOKEN = "OTc5MzgxMTE5ODg1NjUyMDEw.Gw8hQx.r1UaJimPgGbO-lMIQjYo6LGCKLuqsRVEFO0ddE"
-
 require("dotenv").config()
 
 const client = new Discord.Client({
@@ -14,7 +12,7 @@ const client = new Discord.Client({
 
 let bot = {
     client, 
-    prefix: "n."
+    prefix: "!"
 }
 
 client.commands = new Discord.Collection()
@@ -37,3 +35,4 @@ module.exports = bot
 
 
 client.login(process.env.TOKEN)
+
